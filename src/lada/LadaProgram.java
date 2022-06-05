@@ -1,10 +1,9 @@
 package lada;
 
+import java.io.Console;
 import java.util.Scanner;
 
 public class LadaProgram {
-
-    boolean megfejtes = true;
 
     private final String arany;
     private final String ezust;
@@ -27,11 +26,17 @@ public class LadaProgram {
     }
 
     public void megfejtes() {
-        Scanner userinput = new Scanner(System.in);
-        if (userinput="bronz") {
-            megfejtes=true;
-        }else{
-            megfejtes=false;
+        Console usermegfejtes = System.console();
+        if (usermegfejtes == null) {
+            System.out.print("Írja be a megfejtést!");
+        } else {
+            String line = usermegfejtes.readLine("");
+        }
+        boolean megfejtes = true;
+        if (usermegfejtes = LadaFajta.BRONZ) {
+            megfejtes = true;
+        } else {
+            megfejtes = false;
         }
     }
 }
